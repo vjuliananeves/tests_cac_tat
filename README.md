@@ -32,5 +32,3 @@ Or, run `npm run cy:open:mobike` to open Cypress in interactive mode on a mobile
 
 If you want to support this project, leave a ⭐.
 ___
-
-This project was created with ❤️ by [Walmyr](https://walmyr.dev).
