@@ -140,20 +140,15 @@ describe('Central de Atendimento ao Cliente TAT', function() {
     })
 
     it('CT19 - Exibe e esconde as mensagens de sucesso e erro usando o .invoke', function () {
-        cy.get('.success')
-          .should('not.be.visible')
-          .invoke('show')
-          .should('be.visible')
-          .and('contain', 'Mensagem enviada com sucesso.')
-          .invoke('hide')
-          .should('not.be.visible')
-        cy.get('.error')
-          .should('not.be.visible')
-          .invoke('show')
-          .should('be.visible')
-          .and('contain', 'Valide os campos obrigatórios!')
-          .invoke('hide')
-          .should('not.be.visible')
+        cy.get('.success').should('not.be.visible')
+             .invoke('show').should('be.visible')
+                .and('contain', 'Mensagem enviada com sucesso.')
+          .invoke('hide').should('not.be.visible')
+        
+          cy.get('.error').should('not.be.visible')
+            .invoke('show').should('be.visible')
+                .and('contain', 'Valide os campos obrigatórios!')
+            .invoke('hide').should('not.be.visible')
       })
 
       it('CT20 - Preenche a area de texto usando o comando invoke', function (){
@@ -168,11 +163,10 @@ describe('Central de Atendimento ao Cliente TAT', function() {
             expect(status).to.equal(200)
             expect(statusText).to.equal('OK')
             expect(body).to.include('CAC TAT')
-
         })
       })
 
-      it.only('CT22 - Desafio Procure o Gato', function (){
+      it('CT22 - Desafio Procure o Gato', function (){
         cy.get('#cat').should('not.be.visible')
             .invoke('show').should('be.visible')
       })
